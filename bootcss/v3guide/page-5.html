@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>page-5</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/a.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/jquery.transit.min.js"></script>
+
+<script>
+$(function(){
+
+	// 文字
+	$('.p5-text').css({
+		scale: 0,
+		opacity: 0
+	});
+	$('.p5-text')
+		.transition({ opacity: 1, scale: 1, delay: 1000}, 500, 'easeInQuad');
+
+	$('.p5-good')
+		.css({ rotate: '0' });
+	$('.p5-good')
+		.transition({rotate: '45deg'}, 500)
+		.transition({rotate: '-45deg'}, 500)
+		.transition({rotate: '0deg'}, 500);
+
+
+	
+
+});
+
+</script>
+
+</head>
+<body>
+
+<div class="pages">
+
+	<div class="page">
+
+		<div class="pagecontent">
+
+
+			<a href="#x" class="p5 p5-btn">
+				<span class="p5-logo"><img src="img/p5/p5_01.png"></span>
+				<span class="p5 p5-text"><img src="img/p5/p5_text.png"></span>
+			</a>
+
+			<div class="p5 p5-good"><img src="img/p5/p5_good.png"></div>
+
+
+		</div>
+		<div class="pagebackground p5-bg"></div>
+
+	</div>
+
+</div>
+
+
+
+<script>
+var ws = document.body.clientWidth/320.0;
+var hs = document.body.clientHeight/568.0;
+$(function(){
+
+	$('.page').css({ 
+		scale: hs
+	});
+
+});
+$(window).resize(function(){
+	var ws = document.body.clientWidth/320.0;
+	var hs = document.body.clientHeight/568.0;
+	$('.page').css({ 
+		scale: hs
+	});			
+});
+</script>
+
+</body>
+</html>

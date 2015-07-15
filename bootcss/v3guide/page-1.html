@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>page-1</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/a.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/jquery.transit.min.js"></script>
+
+<script>
+$(function(){
+
+	$('.p1-50').css({
+		x: '-300px',
+		opacity: 0
+	});
+	$('.p1-50')
+		.transition({ opacity: 1, x: 10}, 500, 'easeInOutSine')
+		.transition({ x: 0}, 500, 'snap');
+	$('.p1-yi')
+		.transition({x: 100, delay: 500}, 10, 'easeInOutSine')
+		.transition({ x: 0}, 1000, 'snap');
+
+	// 翻页箭头
+	pageUp();
+	function pageUp(){
+		$('#page_up_img').css({ 
+			y: 0
+		});
+		$('#page_up_img')
+			.transition({y: -20}, 1000, 'linear')
+			.transition({y: 0}, 1000, 'linear', pageUp);
+	}
+
+});
+
+
+
+
+</script>
+
+</head>
+<body>
+
+<div class="pages">
+
+	<div class="page">
+
+		<a href="page-2.html" class="page_up">
+			<img id="page_up_img" src="img/page_up.png">
+		</a>
+
+		<div class="pagecontent">
+
+			<div class="p1-next"><img src="img/p1/p1_1.png"></div>
+
+			<div class="p1-yi"><img src="img/p1/p1_2.png"></div>
+
+			<div class="p1-50"><img src="img/p1/50_3.png"></div>
+
+			<div class="p1-yuan"></div>
+
+			<div class="p1-round"><img src="img/p1/round.png"></div>
+		
+			<div class="p1-mobilizing">
+				<img src="img/p1/mobilizing.png">
+			</div>
+
+			<div class="p1-intro">
+				<h3><img src="img/p1/GMIC_BJ_2014.png"></h3>
+				<h4>全球移动互联网大会</h4>
+				<h5>国家会议中心 &nbsp; 2014年5月5-6日</h5>
+			</div>
+
+		</div>
+		<div class="pagebackground p1-bg"><img src="img/p1/bg.jpg"></div>
+
+	</div>
+
+</div>
+
+<script>
+var ws = document.body.clientWidth/320.0;
+var hs = document.body.clientHeight/568.0;
+$(function(){
+
+	$('.page').css({ 
+		scale: hs
+	});
+
+});
+$(window).resize(function(){
+	var ws = document.body.clientWidth/320.0;
+	var hs = document.body.clientHeight/568.0;
+	$('.page').css({ 
+		scale: hs
+	});			
+});
+</script>
+
+
+</body>
+</html>

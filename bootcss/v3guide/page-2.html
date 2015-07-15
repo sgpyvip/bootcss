@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>page-2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/a.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/jquery.transit.min.js"></script>
+
+
+<script>
+$(function(){
+
+	// 北京
+	$('.p2-bj').css({
+		x: '-150px',
+		opacity: 0
+	});
+	$('.p2-bj')
+		.transition({ opacity: 1, x: 0}, 500, 'snap');
+
+	// 东京
+	$('.p2-dj').css({
+		x: '150px',
+		opacity: 0
+	});
+	$('.p2-dj')
+		.transition({ opacity: 1, x: 0, delay: 150}, 500, 'snap');
+
+	// 新德里
+	$('.p2-xdl').css({
+		x: '150px',
+		opacity: 0
+	});
+	$('.p2-xdl')
+		.transition({ opacity: 1, x: 0, delay: 300}, 500, 'snap');
+
+	// 硅谷
+	$('.p2-gg').css({
+		x: '-150px',
+		opacity: 0
+	});
+	$('.p2-gg')
+		.transition({ opacity: 1, x: 0, delay: 450}, 500, 'snap');
+
+	// 链接全球
+	$('.p2-intro').css({
+		x: '100px',
+		opacity: 0
+	});
+	$('.p2-intro')
+		.transition({ opacity: 1, x: 0, delay: 600}, 300, 'in');
+
+
+	// 翻页箭头
+	pageUp();
+	function pageUp(){
+		$('#page_up_img').css({ 
+			y: 0
+		});
+		$('#page_up_img')
+			.transition({y: -20}, 1000, 'linear')
+			.transition({y: 0}, 1000, 'linear', pageUp);
+	}
+
+	
+});
+
+</script>
+
+</head>
+<body>
+
+<div class="pages">
+
+	<div class="page">
+
+		<a href="page-3.html" class="page_up">
+			<img id="page_up_img" src="img/page_up.png">
+		</a>
+
+		<div class="pagecontent">
+
+			
+			<div class="p2 p2-bj"><img src="img/p2/bj.png"></div>
+
+			<div class="p2 p2-dj"><img src="img/p2/dj.png"></div>
+
+			<div class="p2 p2-xdl"><img src="img/p2/xdl.png"></div>
+
+			<div class="p2 p2-gg"><img src="img/p2/gg.png"></div>
+
+			<div class="p2 p2-intro">
+				<h2>连接全球</h2>
+				<p>回学校宣传，几何尺寸哦<br />数还行啊设计啊才的汉武大帝<br />细菌性进行吭哧吭哧</p>
+			</div>
+
+			<div class="p2 p2-line"><img src="img/p2/line.png">
+
+				<div class="p2 p2-dot p2-dot-1"></div>
+				<div class="p2 p2-dot p2-dot-2"></div>
+				<div class="p2 p2-dot p2-dot-3"></div>
+				<div class="p2 p2-dot p2-dot-4"></div>
+
+			</div>
+		
+
+		</div>
+
+		<div class="pagebackground"><img src="img/p2/bg.jpg"></div>
+
+	</div>
+
+</div>
+
+<script>
+var ws = document.body.clientWidth/320.0;
+var hs = document.body.clientHeight/568.0;
+$(function(){
+
+	$('.page').css({ 
+		scale: hs
+	});
+
+});
+$(window).resize(function(){
+	var ws = document.body.clientWidth/320.0;
+	var hs = document.body.clientHeight/568.0;
+	$('.page').css({ 
+		scale: hs
+	});			
+});
+</script>
+
+</body>
+</html>
